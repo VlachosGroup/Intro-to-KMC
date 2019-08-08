@@ -7,7 +7,7 @@ For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Py
 - Yifan Wang (wangyf@udel.edu)
 - Jake Kalscheur (jkalsch@udel.edu)
 
-## Chapters
+## Chapters[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/VlachosGroup/Intro-to-KMC/master)
 
 ### Well-mixed kMC:
 
