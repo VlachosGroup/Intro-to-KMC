@@ -17,7 +17,7 @@ For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Py
 
 2. Samlping and Computing Average with a Gene Expression Mechanism
 
-3. Handling Oscillation a Auto Catalysis mechanism
+3. Modeling Oscillations with an Auto Catalysis mechanism
 
 ### Lattice kMC:
 
