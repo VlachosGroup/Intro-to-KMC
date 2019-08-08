@@ -13,11 +13,11 @@ For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Py
 
 ### Well-mixed kMC:
 
-1. Intro to kMC with a Michaelis-Menten example
+1. Introduction with a Michaelis-Menten example
 
 2. Samlping and Computing Average with a Gene Expression Mechanism
 
-3. Modeling a Auto Catalysis mechanism
+3. Handling Oscillation a Auto Catalysis mechanism
 
 ### Lattice kMC:
 
