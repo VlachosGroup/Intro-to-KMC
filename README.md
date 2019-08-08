@@ -11,7 +11,7 @@ For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Py
 
 ## Chapters
 
-- Well-mixed kMC:
+### Well-mixed kMC:
 
 1. Intro to kMC with a Michaelis-Menten example
 
@@ -19,6 +19,6 @@ For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Py
 
 3. Modeling a Auto Catalysis mechanism
 
-- Lattice kMC:
+### Lattice kMC:
 
 4. CO Oxidation Example on Pd(111) by Zacros and Zacros Wrapper
