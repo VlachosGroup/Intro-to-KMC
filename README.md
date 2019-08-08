@@ -21,4 +21,4 @@ For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Py
 
 4. CO Oxidation Example on Pd(111) by Zacros and Zacros Wrapper
 
-Click here [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/VlachosGroup/Intro-to-KMC/master) to play with the interactive notebooks on your browser
+Click [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/VlachosGroup/Intro-to-KMC/master) to play with the interactive notebooks on your browser
