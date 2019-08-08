@@ -1,4 +1,4 @@
-# Introduction to kinetic Monte Carlo Simulations (kMC) with Examples in Jupyter Notebooks
+# Introduction to kinetic Monte Carlo (kMC) Simulations with Examples in Jupyter Notebooks
 The notebooks contain the basic concepts of kinetic Monte Carlo simluations and its applications in both well-mixed and lattice systems taken from the literature.
 
 For lattice kMC, the software named [zacros](http://zacros.org/) is used. Its Python Wrapper can be downloaded or cloned from [Zacros-Wrapper GitHub repository](https://github.com/VlachosGroup/Zacros-Wrapper).
