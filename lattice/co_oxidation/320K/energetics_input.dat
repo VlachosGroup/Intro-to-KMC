@@ -1,0 +1,630 @@
+# Energetics for CO oxidation on Pt
+
+energetics
+
+############################################################################
+
+cluster O_point
+
+  sites 1
+  lattice_state
+    1 O*  1
+
+  variant fcc
+    site_types          fcc
+    graph_multiplicity  1
+    cluster_eng         -1.0932
+  end_variant
+
+  variant hcp
+    site_types          hcp
+    graph_multiplicity  1
+    cluster_eng         -0.9302
+  end_variant
+
+end_cluster
+
+############################################################################
+
+
+cluster O_pair_1NN
+
+  sites 2
+  neighboring 1-2
+  lattice_state
+    1 O*   1
+    2 O*   1
+
+    variant fcc
+      site_types            fcc fcc
+      graph_multiplicity    2
+      cluster_eng           0.2288
+    end_variant
+
+    variant hcp
+      site_types            hcp hcp
+      graph_multiplicity    2
+      cluster_eng           0.2274
+    end_variant
+
+    variant fcc_hcp
+      site_types            fcc hcp
+      graph_multiplicity    1
+      cluster_eng           0.9999
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_pair
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 O*   1
+    & &    &
+    2 O*   1
+
+    variant fcc_2NN
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           -0.0050
+    end_variant
+
+    variant hcp_2NN
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           -0.0050
+    end_variant
+
+    variant fcc_3NN
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+      angles 1-2-3:180.0
+      cluster_eng           -0.0142
+
+    end_variant
+
+    variant hcp_3NN
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+      angles 1-2-3:180.0
+      cluster_eng           -0.0144
+
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_triplet
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 O*   1
+    2 O*   1
+    3 O*   1
+
+    variant fcc_linear
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+	  angles 1-2-3:180.0
+      cluster_eng           0.0421
+    end_variant
+
+    variant fcc_bent
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           0.0405
+    end_variant
+
+    variant hcp_linear
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+	  angles 1-2-3:180.0
+      cluster_eng           0.0425
+    end_variant
+
+    variant hcp_bent
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           0.0405
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_triplet
+
+  sites 3
+  neighboring 1-2 2-3 3-1
+  lattice_state
+    1 O*   1
+    2 O*   1
+    3 O*   1
+
+    variant fcc_triangle
+      site_types            fcc fcc fcc
+      graph_multiplicity    6
+	  angles 1-2-3:60.0
+      cluster_eng           -0.0641
+    end_variant
+
+    variant hcp_triangle
+      site_types            hcp hcp hcp
+      graph_multiplicity    6
+	  angles 1-2-3:60.0
+      cluster_eng           -0.0641
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_pair_fcc_hcp
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 O*   1
+    & &    &
+    2 O*   1
+
+    variant fcc_hcp_2NN
+      site_types            fcc fcc hcp
+      graph_multiplicity    1
+	  angles 1-2-3:90.0
+      cluster_eng           0.2089
+    end_variant
+
+    variant fcc_hcp_3NN
+      site_types            fcc fcc hcp
+      graph_multiplicity    1
+      angles 1-2-3:150.0
+      cluster_eng           0.0179
+    end_variant
+
+end_cluster
+
+############################################################################
+############################################################################
+
+cluster CO_point
+
+  sites 1
+  lattice_state
+    1 CO*  1
+
+  variant fcc
+    site_types          fcc
+    graph_multiplicity  1
+    cluster_eng         -1.9276
+  end_variant
+
+  variant hcp
+    site_types          hcp
+    graph_multiplicity  1
+    cluster_eng         -1.9047
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster CO_pair_1NN
+
+  sites 2
+  neighboring 1-2
+  lattice_state
+    1 CO*   1
+    2 CO*   1
+
+    variant fcc
+      site_types            fcc fcc
+      graph_multiplicity    2
+      cluster_eng           0.2849
+    end_variant
+
+    variant hcp
+      site_types            hcp hcp
+      graph_multiplicity    2
+      cluster_eng           0.2795
+    end_variant
+
+    variant fcc_hcp
+      site_types            fcc hcp
+      graph_multiplicity    2
+      cluster_eng           0.9999
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster CO_pair
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 CO*   1
+    & &    &
+    2 CO*   1
+
+    variant fcc_2NN
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           0.0097
+    end_variant
+
+    variant hcp_2NN
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           0.0086
+    end_variant
+
+    variant fcc_3NN
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+      angles 1-2-3:180.0
+      cluster_eng           0.0127
+
+    end_variant
+
+    variant hcp_3NN
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+      angles 1-2-3:180.0
+      cluster_eng           0.0126
+
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster CO_triplet
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 CO*   1
+    2 CO*   1
+    3 CO*   1
+
+    variant fcc_linear
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+	  angles 1-2-3:180.0
+      cluster_eng           -0.0076
+    end_variant
+
+    variant fcc_bent
+      site_types            fcc fcc fcc
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           0.0016
+    end_variant
+
+    variant hcp_linear
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+	  angles 1-2-3:180.0
+      cluster_eng           -0.0059
+    end_variant
+
+    variant hcp_bent
+      site_types            hcp hcp hcp
+      graph_multiplicity    2
+	  angles 1-2-3:120.0
+      cluster_eng           0.0047
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster CO_triplet
+
+  sites 3
+  neighboring 1-2 2-3 3-1
+  lattice_state
+    1 CO*   1
+    2 CO*   1
+    3 CO*   1
+
+    variant fcc_triangle
+      site_types            fcc fcc fcc
+      graph_multiplicity    6
+	  angles 1-2-3:60.0
+      cluster_eng           0.0306
+    end_variant
+
+    variant hcp_triangle
+      site_types            hcp hcp hcp
+      graph_multiplicity    6
+	  angles 1-2-3:60.0
+      cluster_eng           0.0344
+    end_variant
+
+end_cluster
+
+############################################################################
+
+cluster CO_pair_fcc_hcp
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 CO*   1
+    & &    &
+    2 CO*   1
+
+    variant fcc_hcp_2NN
+      site_types            fcc fcc hcp
+      graph_multiplicity    1
+	  angles 1-2-3:90.0
+      cluster_eng           0.2142
+    end_variant
+
+    variant fcc_hcp_3NN
+      site_types            fcc fcc hcp
+      graph_multiplicity    1
+      angles 1-2-3:150.0
+      cluster_eng           0.0156
+    end_variant
+
+end_cluster
+
+
+############################################################################
+############################################################################
+
+cluster CO_O_pair_1NN
+
+  sites 2
+  neighboring 1-2
+  lattice_state
+    1 CO*  1
+    2 O*   1
+
+  variant fcc_fcc
+    site_types          fcc fcc
+    graph_multiplicity  1
+    cluster_eng         0.2185
+  end_variant
+
+  variant hcp_hcp
+    site_types          hcp hcp
+    graph_multiplicity  1
+    cluster_eng         0.2009
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster CO_O_pair_2NN
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 CO* 1
+    & &   &
+    2 O*  1
+
+  variant fcc
+    site_types          fcc fcc fcc
+    graph_multiplicity  1
+	angles 1-2-3:120.0
+    cluster_eng         0.0063
+  end_variant
+
+  variant hcp
+    site_types          hcp hcp hcp
+    graph_multiplicity  1
+	angles 1-2-3:120.0
+    cluster_eng         0.0834
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster 2O_CO_triplet_linear
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 O*  1
+    2 CO* 1
+    3 O*  1
+
+  variant fcc
+    site_types          fcc fcc fcc
+    graph_multiplicity  2
+	angles 1-2-3:180.0
+    cluster_eng         0.1644
+  end_variant
+
+  variant hcp
+    site_types          hcp hcp hcp
+    graph_multiplicity  2
+	angles 1-2-3:180.0
+    cluster_eng         0.2350
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_2CO_triplet_linear
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 CO*  1
+    2 O*   1
+    3 CO*  1
+
+  variant fcc
+    site_types          fcc fcc fcc
+    graph_multiplicity  2
+	angles 1-2-3:180.0
+    cluster_eng         0.0713
+  end_variant
+
+  variant hcp
+    site_types          hcp hcp hcp
+    graph_multiplicity  2
+	angles 1-2-3:180.0
+    cluster_eng         0.2089
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster 2O_CO_triplet_triangle
+
+  sites 3
+  neighboring 1-2 2-3 3-1
+  lattice_state
+    1 O*  1
+    2 O*  1
+    3 CO*   1
+
+  variant fcc
+    site_types          fcc fcc fcc
+    graph_multiplicity  2
+	angles 1-2-3:60.0
+    cluster_eng         0.0810
+  end_variant
+
+  variant hcp
+    site_types          hcp hcp hcp
+    graph_multiplicity  2
+	angles 1-2-3:60.0
+    cluster_eng         -0.1046
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_2CO_triplet_triangle
+
+  sites 3
+  neighboring 1-2 2-3 3-1
+  lattice_state
+    1 CO*   1
+    2 CO*   1
+    3 O*    1
+
+  variant fcc
+    site_types          fcc fcc fcc
+    graph_multiplicity  2
+	angles 1-2-3:60.0
+    cluster_eng         -0.0592
+  end_variant
+
+  variant hcp
+    site_types          hcp hcp hcp
+    graph_multiplicity  2
+	angles 1-2-3:60.0
+    cluster_eng         -0.1143
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_CO_pair_1NN
+
+  sites 2
+  neighboring 1-2
+  lattice_state
+    1 O*  1
+    2 CO*   1
+
+  variant fcc_hcp
+    site_types          fcc hcp
+    graph_multiplicity  1
+    cluster_eng         0.9999
+  end_variant
+
+
+  variant fcc_hcp
+    site_types          hcp fcc
+    graph_multiplicity  1
+    cluster_eng         0.9999
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_CO_pair_2NN
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 O*    1
+    & &     &
+    2 CO*   1
+
+  variant fcc_hcp
+    site_types          fcc fcc hcp
+    graph_multiplicity  1
+	angles 1-2-3:90.0
+    cluster_eng         0.1677
+  end_variant
+
+  variant fcc_hcp
+    site_types          hcp fcc fcc
+    graph_multiplicity  1
+	angles 1-2-3:90.0
+    cluster_eng         0.1239
+  end_variant
+
+end_cluster
+
+############################################################################
+
+cluster O_CO_pair_3NN
+
+  sites 3
+  neighboring 1-2 2-3
+  lattice_state
+    1 O*    1
+    & &     &
+    2 CO*   1
+
+  variant fcc_hcp
+    site_types          fcc fcc hcp
+    graph_multiplicity  1
+    angles 1-2-3:150
+    cluster_eng         0.0174
+  end_variant
+
+  variant hcp_fcc
+    site_types          hcp fcc fcc
+    graph_multiplicity  1
+    angles 1-2-3:150
+    cluster_eng         0.0425
+  end_variant
+
+end_cluster
+
+############################################################################
+############################################################################
+
+end_energetics

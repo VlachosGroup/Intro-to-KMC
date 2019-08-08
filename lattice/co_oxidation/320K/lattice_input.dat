@@ -1,0 +1,36 @@
+# Lattice specification file: (111) infinity terrace-step site ratio
+
+lattice periodic_cell
+
+cell_vectors       # in row format
+   2.771858582251266   0.000000000000000
+   1.385929291125633   2.400499947927514
+
+repeat_cell       48 48
+#                 96 96
+
+n_site_types      2
+site_type_names   fcc hcp
+
+n_cell_sites      2
+site_types        1 2
+
+site_coordinates   # (x,y) in row format
+   0.333333333333333   0.333333333333333 
+   0.666666666666666   0.666666666666666
+
+neighboring_structure # site-neighsite cell
+   1-2 self
+   1-1 north
+   1-1 east
+   1-1 southeast
+   2-1 north
+   2-2 north
+   2-1 east
+   2-2 east
+   2-2 southeast
+
+
+end_neighboring_structure
+
+end_lattice

@@ -1,0 +1,105 @@
+# CO oxidation on Pt(111) surface for T = 190 K
+
+mechanism
+
+# Units used:
+# for pre-exponentials of surface reactions:      1/s
+# for activation energies:                        eV
+
+############################################################################
+
+reversible_step CO_adsorption
+  gas_reacs_prods  CO -1
+  sites 1
+  initial # (entitynumber, species, dentate)
+    1 *   1
+  final
+    1 CO* 1
+  variant FCC # ElemStep 1
+    site_types fcc
+    pre_expon   3.310e-003
+    pe_ratio    1.170e-020
+    activ_eng   0.00
+    prox_factor 0.00
+  end_variant
+
+  variant HCP # ElemStep 2
+    site_types hcp
+    pre_expon  3.310e-003
+    pe_ratio   2.550e-020
+    activ_eng  0.00
+    prox_factor 0.00
+  end_variant
+
+end_reversible_step
+
+############################################################################
+
+reversible_step CO_diffusion
+  sites 2
+  neighboring 1-2
+  initial # (entitynumber, species, dentate)
+    1 CO*   1
+    2 *     1
+  final
+    1 *     1
+    2 CO*   1
+  variant FCC_to_HCP
+    site_types fcc hcp
+    pre_expon   5.100e004
+    pe_ratio    2.180
+    activ_eng   0.26
+    prox_factor 0.5
+  end_variant
+
+end_reversible_step
+
+############################################################################
+
+reversible_step O_diffusion
+  sites 2
+  neighboring 1-2
+  initial # (entitynumber, species, dentate)
+    1 O*   1
+	2 *    1
+  final
+    1 *     1
+    2 O*    1
+  variant FCC_to_HCP
+    site_types fcc hcp
+    pre_expon   8.330e008
+    pe_ratio    1.520
+    activ_eng   0.53
+    prox_factor 0.5
+  end_variant
+
+end_reversible_step
+
+############################################################################
+
+step CO-O_Oxidation
+  gas_reacs_prods  CO2 1
+  sites 2
+  neighboring 1-2
+  initial
+    1 CO*  1
+    2 O*   1
+  final
+    1 *    1
+    2 *    1
+  variant FCC
+    site_types fcc fcc
+    pre_expon   4.130e013
+    activ_eng   1.13
+    prox_factor 0.33
+  end_variant
+
+  variant FCC
+    site_types hcp hcp
+    pre_expon   1.240e013
+    activ_eng   1.08
+    prox_factor 0.33
+  end_variant
+
+  end_step
+  ############################################################################

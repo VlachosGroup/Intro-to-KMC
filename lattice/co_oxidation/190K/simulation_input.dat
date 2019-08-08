@@ -1,0 +1,39 @@
+# KMC simulation specification
+# This simulation is about CO oxidation on Pd(111). CO + O* --> CO2 + *
+random_seed               888888
+
+temperature               190.0
+pressure                  1.0 #2.66645e-11
+
+n_gas_species             2
+gas_specs_names           CO            CO2
+gas_energies               0.000       -2.337 # eV
+gas_molec_weights         28.0102      44.0096
+gas_molar_fracs            1.00        0.00
+
+n_surf_species            2
+surf_specs_names          CO*  O*
+surf_specs_dent           1    1
+
+snapshots                 on time 600.00
+#snapshots                 on event 100
+process_statistics        on time 60.00
+#process_statistics        on event 1000
+species_numbers           on time 60.00
+#species_numbers           on event 1000
+
+event_report              off
+
+max_steps                 infinity
+
+max_time                  60000.0
+
+wall_time                 86400 # 24 hours
+
+no_restart
+
+# debug_report_processes
+# debug_check_processes
+# debug_check_lattice
+
+finish

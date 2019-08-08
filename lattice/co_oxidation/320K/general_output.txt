@@ -1,0 +1,775 @@
++---------------------------------------------------+
+|  ZACROS 1.02                                      |
+|  GRAPH-THEORETICAL KMC SIMULATION CODE            |
+|                                                   |
+|  Multiscale Computational Catalysis and           |
+|  Materials Science Research Group                 |
+|                                                   |
+|  Michail Stamatakis, Ph.D.                        |
+|  Chemical Engineering Department                  |
+|  University College London                        |
++---------------------------------------------------+
+
+Simulation setup:
+~~~~~~~~~~~~~~~~~
+
+    Random sequence with seed: 953129                          
+
+    Temperature: 320.0000000000000
+
+    Pressure: 1.000000000000000
+
+    Number of gas species: 2
+
+    Gas species names: CO CO2 
+
+    Gas species energies: 0.000000000000000 -2.337000000000000 
+
+    Gas species molecular weights: 28.01020000000000 44.00960000000000 
+
+    Gas species molar fractions: 1.000000000000000 0.000000000000000 
+
+    Number of surface species: 2
+
+    Surface species names: CO* O* 
+
+    Surface species dentation:  1  1
+
+    Snapshots will be saved in file history_output.txt every 5.000000000000000 time units
+
+    Process statistics will be reported in file procstat_output.txt every 0.5000000000000000 time units
+
+    Species number will be reported in file specnum_output.txt every 0.5000000000000000 time units
+
+    Event reporting turned off
+
+    Maximum number of steps: 9223372036854775807 (maximum allowed value)
+
+    Max simulated time: 500.0000000000000               
+
+    Allowed walltime in seconds: 86400
+
+    Keyword no_restart parsed. You will not be able to resume the simulation at a later time.
+
+Finished reading simulation input.
+
+Lattice setup:
+~~~~~~~~~~~~~~
+
+    Constructing a periodic lattice from unit cell data.
+
+    Unit cell area: 6.653846382356597
+
+    Lattice cell: 48 x 48
+
+    Surface area: 15330.46206494960
+
+    Number of lattice sites: 4608
+
+    Number of site types: 2
+
+    Site type names and number of sites of that type:
+      fcc (2304)
+      hcp (2304)
+
+    Maximum coordination number: 9
+
+    Lattice structure written to lattice_output.txt
+
+Finished reading lattice input.
+
+Energetics setup:
+~~~~~~~~~~~~~~~~~
+
+    Number of clusters: 52
+
+    Maximum number of sites involved in a cluster: 3
+
+    Clusters:
+
+        1. O_point_fcc:                  Mult = 1      ECI = -1.093200000000000        Entities:  O* 
+        2. O_point_hcp:                  Mult = 1      ECI = -0.9302000000000000       Entities:  O* 
+        3. O_pair_1NN_fcc:               Mult = 2      ECI = 0.2288000000000000        Entities:  O* O* 
+        4. O_pair_1NN_hcp:               Mult = 2      ECI = 0.2274000000000000        Entities:  O* O* 
+        5. O_pair_1NN_fcc_hcp:           Mult = 1      ECI = 0.9999000000000000        Entities:  O* O* 
+        6. O_pair_fcc_2NN:               Mult = 2      ECI = -5.0000000000000001E-003  Entities:  O* O* 
+        7. O_pair_hcp_2NN:               Mult = 2      ECI = -5.0000000000000001E-003  Entities:  O* O* 
+        8. O_pair_fcc_3NN:               Mult = 2      ECI = -1.4200000000000001E-002  Entities:  O* O* 
+        9. O_pair_hcp_3NN:               Mult = 2      ECI = -1.4400000000000000E-002  Entities:  O* O* 
+       10. O_triplet_fcc_linear:         Mult = 2      ECI = 4.2099999999999999E-002   Entities:  O* O* O*
+       11. O_triplet_fcc_bent:           Mult = 2      ECI = 4.0500000000000001E-002   Entities:  O* O* O*
+       12. O_triplet_hcp_linear:         Mult = 2      ECI = 4.2500000000000003E-002   Entities:  O* O* O*
+       13. O_triplet_hcp_bent:           Mult = 2      ECI = 4.0500000000000001E-002   Entities:  O* O* O*
+       14. O_triplet_fcc_triangle:       Mult = 6      ECI = -6.4100000000000004E-002  Entities:  O* O* O*
+       15. O_triplet_hcp_triangle:       Mult = 6      ECI = -6.4100000000000004E-002  Entities:  O* O* O*
+       16. O_pair_fcc_hcp_fcc_hcp_2NN:   Mult = 1      ECI = 0.2089000000000000        Entities:  O* O* 
+       17. O_pair_fcc_hcp_fcc_hcp_3NN:   Mult = 1      ECI = 1.7899999999999999E-002   Entities:  O* O* 
+       18. CO_point_fcc:                 Mult = 1      ECI = -1.927600000000000        Entities:  CO* 
+       19. CO_point_hcp:                 Mult = 1      ECI = -1.904700000000000        Entities:  CO* 
+       20. CO_pair_1NN_fcc:              Mult = 2      ECI = 0.2849000000000000        Entities:  CO* CO* 
+       21. CO_pair_1NN_hcp:              Mult = 2      ECI = 0.2795000000000000        Entities:  CO* CO* 
+       22. CO_pair_1NN_fcc_hcp:          Mult = 2      ECI = 0.9999000000000000        Entities:  CO* CO* 
+       23. CO_pair_fcc_2NN:              Mult = 2      ECI = 9.7000000000000003E-003   Entities:  CO* CO* 
+       24. CO_pair_hcp_2NN:              Mult = 2      ECI = 8.6000000000000000E-003   Entities:  CO* CO* 
+       25. CO_pair_fcc_3NN:              Mult = 2      ECI = 1.2699999999999999E-002   Entities:  CO* CO* 
+       26. CO_pair_hcp_3NN:              Mult = 2      ECI = 1.2600000000000000E-002   Entities:  CO* CO* 
+       27. CO_triplet_fcc_linear:        Mult = 2      ECI = -7.6000000000000000E-003  Entities:  CO* CO* CO*
+       28. CO_triplet_fcc_bent:          Mult = 2      ECI = 1.6000000000000001E-003   Entities:  CO* CO* CO*
+       29. CO_triplet_hcp_linear:        Mult = 2      ECI = -5.8999999999999999E-003  Entities:  CO* CO* CO*
+       30. CO_triplet_hcp_bent:          Mult = 2      ECI = 4.7000000000000002E-003   Entities:  CO* CO* CO*
+       31. CO_triplet_fcc_triangle:      Mult = 6      ECI = 3.0599999999999999E-002   Entities:  CO* CO* CO*
+       32. CO_triplet_hcp_triangle:      Mult = 6      ECI = 3.4400000000000000E-002   Entities:  CO* CO* CO*
+       33. CO_pair_fcc_hcp_fcc_hcp_2NN:  Mult = 1      ECI = 0.2142000000000000        Entities:  CO* CO* 
+       34. CO_pair_fcc_hcp_fcc_hcp_3NN:  Mult = 1      ECI = 1.5599999999999999E-002   Entities:  CO* CO* 
+       35. CO_O_pair_1NN_fcc_fcc:        Mult = 1      ECI = 0.2185000000000000        Entities:  CO* O* 
+       36. CO_O_pair_1NN_hcp_hcp:        Mult = 1      ECI = 0.2009000000000000        Entities:  CO* O* 
+       37. CO_O_pair_2NN_fcc:            Mult = 1      ECI = 6.3000000000000000E-003   Entities:  CO* O* 
+       38. CO_O_pair_2NN_hcp:            Mult = 1      ECI = 8.3400000000000002E-002   Entities:  CO* O* 
+       39. 2O_CO_triplet_linear_fcc:     Mult = 2      ECI = 0.1644000000000000        Entities:  O* CO* O*
+       40. 2O_CO_triplet_linear_hcp:     Mult = 2      ECI = 0.2350000000000000        Entities:  O* CO* O*
+       41. O_2CO_triplet_linear_fcc:     Mult = 2      ECI = 7.1300000000000002E-002   Entities:  CO* O* CO*
+       42. O_2CO_triplet_linear_hcp:     Mult = 2      ECI = 0.2089000000000000        Entities:  CO* O* CO*
+       43. 2O_CO_triplet_triangle_fcc:   Mult = 2      ECI = 8.1000000000000003E-002   Entities:  O* O* CO*
+       44. 2O_CO_triplet_triangle_hcp:   Mult = 2      ECI = -0.1046000000000000       Entities:  O* O* CO*
+       45. O_2CO_triplet_triangle_fcc:   Mult = 2      ECI = -5.9200000000000003E-002  Entities:  CO* CO* O*
+       46. O_2CO_triplet_triangle_hcp:   Mult = 2      ECI = -0.1143000000000000       Entities:  CO* CO* O*
+       47. O_CO_pair_1NN_fcc_hcp:        Mult = 1      ECI = 0.9999000000000000        Entities:  O* CO* 
+       48. O_CO_pair_1NN_fcc_hcp:        Mult = 1      ECI = 0.9999000000000000        Entities:  O* CO* 
+       49. O_CO_pair_2NN_fcc_hcp:        Mult = 1      ECI = 0.1677000000000000        Entities:  O* CO* 
+       50. O_CO_pair_2NN_fcc_hcp:        Mult = 1      ECI = 0.1239000000000000        Entities:  O* CO* 
+       51. O_CO_pair_3NN_fcc_hcp:        Mult = 1      ECI = 1.7399999999999999E-002   Entities:  O* CO* 
+       52. O_CO_pair_3NN_hcp_fcc:        Mult = 1      ECI = 4.2500000000000003E-002   Entities:  O* CO* 
+
+Finished reading energetics input.
+
+Mechanism setup:
+~~~~~~~~~~~~~~~~
+
+    Number of elementary steps: 10
+
+    Maximum number of sites involved in a step: 2
+
+    Reaction network:
+
+        1. CO_adsorption_fwd_FCC:          A(Tini) =  2.5500E-03   Ea =  0.00    k(Tini) =  2.5500E-03  Reaction: CO  +  *(fcc)  ->  CO*(fcc)
+        2. CO_adsorption_rev_FCC:          A(Tini) =  9.2727E+16                                        Reaction: CO*(fcc)  ->  CO  +  *(fcc)
+        3. CO_adsorption_fwd_HCP:          A(Tini) =  2.5500E-03   Ea =  0.00    k(Tini) =  2.5500E-03  Reaction: CO  +  *(hcp)  ->  CO*(hcp)
+        4. CO_adsorption_rev_HCP:          A(Tini) =  4.5133E+16                                        Reaction: CO*(hcp)  ->  CO  +  *(hcp)
+        5. CO_diffusion_fwd_FCC_to_HCP:    A(Tini) =  5.2800E+04   Ea =  0.26    k(Tini) =  4.2444E+00  Reaction: CO*(fcc)  +  *(hcp)  ->  *(fcc)  +  CO*(hcp)
+        6. CO_diffusion_rev_FCC_to_HCP:    A(Tini) =  3.7986E+04                                        Reaction: *(fcc)  +  CO*(hcp)  ->  CO*(fcc)  +  *(hcp)
+        7. O_diffusion_fwd_FCC_to_HCP:     A(Tini) =  7.9400E+08   Ea =  0.53    k(Tini) =  3.5702E+00  Reaction: O*(fcc)  +  *(hcp)  ->  *(fcc)  +  O*(hcp)
+        8. O_diffusion_rev_FCC_to_HCP:     A(Tini) =  3.8732E+08                                        Reaction: *(fcc)  +  O*(hcp)  ->  O*(fcc)  +  *(hcp)
+        9. CO-O_Oxidation_FCC:             A(Tini) =  3.2700E+13   Ea =  1.13    k(Tini) =  5.2222E-05  Reaction: CO*(fcc)  +  O*(fcc)  ->  CO2  +  *(fcc)  +  *(fcc)
+       10. CO-O_Oxidation_HCP:             A(Tini) =  1.1500E+13   Ea =  1.08    k(Tini) =  1.1258E-04  Reaction: CO*(hcp)  +  O*(hcp)  ->  CO2  +  *(hcp)  +  *(hcp)
+
+Finished reading mechanism input.
+
+Initial state setup:
+~~~~~~~~~~~~~~~~~~~~
+
+576 "on-sites" seeding instructions:
+  O* adparticle to be seeded on site(s) 1 
+  O* adparticle to be seeded on site(s) 5 
+  O* adparticle to be seeded on site(s) 9 
+  O* adparticle to be seeded on site(s) 13 
+  O* adparticle to be seeded on site(s) 17 
+  O* adparticle to be seeded on site(s) 21 
+  O* adparticle to be seeded on site(s) 25 
+  O* adparticle to be seeded on site(s) 29 
+  O* adparticle to be seeded on site(s) 33 
+  O* adparticle to be seeded on site(s) 37 
+  O* adparticle to be seeded on site(s) 41 
+  O* adparticle to be seeded on site(s) 45 
+  O* adparticle to be seeded on site(s) 49 
+  O* adparticle to be seeded on site(s) 53 
+  O* adparticle to be seeded on site(s) 57 
+  O* adparticle to be seeded on site(s) 61 
+  O* adparticle to be seeded on site(s) 65 
+  O* adparticle to be seeded on site(s) 69 
+  O* adparticle to be seeded on site(s) 73 
+  O* adparticle to be seeded on site(s) 77 
+  O* adparticle to be seeded on site(s) 81 
+  O* adparticle to be seeded on site(s) 85 
+  O* adparticle to be seeded on site(s) 89 
+  O* adparticle to be seeded on site(s) 93 
+  O* adparticle to be seeded on site(s) 193 
+  O* adparticle to be seeded on site(s) 197 
+  O* adparticle to be seeded on site(s) 201 
+  O* adparticle to be seeded on site(s) 205 
+  O* adparticle to be seeded on site(s) 209 
+  O* adparticle to be seeded on site(s) 213 
+  O* adparticle to be seeded on site(s) 217 
+  O* adparticle to be seeded on site(s) 221 
+  O* adparticle to be seeded on site(s) 225 
+  O* adparticle to be seeded on site(s) 229 
+  O* adparticle to be seeded on site(s) 233 
+  O* adparticle to be seeded on site(s) 237 
+  O* adparticle to be seeded on site(s) 241 
+  O* adparticle to be seeded on site(s) 245 
+  O* adparticle to be seeded on site(s) 249 
+  O* adparticle to be seeded on site(s) 253 
+  O* adparticle to be seeded on site(s) 257 
+  O* adparticle to be seeded on site(s) 261 
+  O* adparticle to be seeded on site(s) 265 
+  O* adparticle to be seeded on site(s) 269 
+  O* adparticle to be seeded on site(s) 273 
+  O* adparticle to be seeded on site(s) 277 
+  O* adparticle to be seeded on site(s) 281 
+  O* adparticle to be seeded on site(s) 285 
+  O* adparticle to be seeded on site(s) 385 
+  O* adparticle to be seeded on site(s) 389 
+  O* adparticle to be seeded on site(s) 393 
+  O* adparticle to be seeded on site(s) 397 
+  O* adparticle to be seeded on site(s) 401 
+  O* adparticle to be seeded on site(s) 405 
+  O* adparticle to be seeded on site(s) 409 
+  O* adparticle to be seeded on site(s) 413 
+  O* adparticle to be seeded on site(s) 417 
+  O* adparticle to be seeded on site(s) 421 
+  O* adparticle to be seeded on site(s) 425 
+  O* adparticle to be seeded on site(s) 429 
+  O* adparticle to be seeded on site(s) 433 
+  O* adparticle to be seeded on site(s) 437 
+  O* adparticle to be seeded on site(s) 441 
+  O* adparticle to be seeded on site(s) 445 
+  O* adparticle to be seeded on site(s) 449 
+  O* adparticle to be seeded on site(s) 453 
+  O* adparticle to be seeded on site(s) 457 
+  O* adparticle to be seeded on site(s) 461 
+  O* adparticle to be seeded on site(s) 465 
+  O* adparticle to be seeded on site(s) 469 
+  O* adparticle to be seeded on site(s) 473 
+  O* adparticle to be seeded on site(s) 477 
+  O* adparticle to be seeded on site(s) 577 
+  O* adparticle to be seeded on site(s) 581 
+  O* adparticle to be seeded on site(s) 585 
+  O* adparticle to be seeded on site(s) 589 
+  O* adparticle to be seeded on site(s) 593 
+  O* adparticle to be seeded on site(s) 597 
+  O* adparticle to be seeded on site(s) 601 
+  O* adparticle to be seeded on site(s) 605 
+  O* adparticle to be seeded on site(s) 609 
+  O* adparticle to be seeded on site(s) 613 
+  O* adparticle to be seeded on site(s) 617 
+  O* adparticle to be seeded on site(s) 621 
+  O* adparticle to be seeded on site(s) 625 
+  O* adparticle to be seeded on site(s) 629 
+  O* adparticle to be seeded on site(s) 633 
+  O* adparticle to be seeded on site(s) 637 
+  O* adparticle to be seeded on site(s) 641 
+  O* adparticle to be seeded on site(s) 645 
+  O* adparticle to be seeded on site(s) 649 
+  O* adparticle to be seeded on site(s) 653 
+  O* adparticle to be seeded on site(s) 657 
+  O* adparticle to be seeded on site(s) 661 
+  O* adparticle to be seeded on site(s) 665 
+  O* adparticle to be seeded on site(s) 669 
+  O* adparticle to be seeded on site(s) 769 
+  O* adparticle to be seeded on site(s) 773 
+  O* adparticle to be seeded on site(s) 777 
+  O* adparticle to be seeded on site(s) 781 
+  O* adparticle to be seeded on site(s) 785 
+  O* adparticle to be seeded on site(s) 789 
+  O* adparticle to be seeded on site(s) 793 
+  O* adparticle to be seeded on site(s) 797 
+  O* adparticle to be seeded on site(s) 801 
+  O* adparticle to be seeded on site(s) 805 
+  O* adparticle to be seeded on site(s) 809 
+  O* adparticle to be seeded on site(s) 813 
+  O* adparticle to be seeded on site(s) 817 
+  O* adparticle to be seeded on site(s) 821 
+  O* adparticle to be seeded on site(s) 825 
+  O* adparticle to be seeded on site(s) 829 
+  O* adparticle to be seeded on site(s) 833 
+  O* adparticle to be seeded on site(s) 837 
+  O* adparticle to be seeded on site(s) 841 
+  O* adparticle to be seeded on site(s) 845 
+  O* adparticle to be seeded on site(s) 849 
+  O* adparticle to be seeded on site(s) 853 
+  O* adparticle to be seeded on site(s) 857 
+  O* adparticle to be seeded on site(s) 861 
+  O* adparticle to be seeded on site(s) 961 
+  O* adparticle to be seeded on site(s) 965 
+  O* adparticle to be seeded on site(s) 969 
+  O* adparticle to be seeded on site(s) 973 
+  O* adparticle to be seeded on site(s) 977 
+  O* adparticle to be seeded on site(s) 981 
+  O* adparticle to be seeded on site(s) 985 
+  O* adparticle to be seeded on site(s) 989 
+  O* adparticle to be seeded on site(s) 993 
+  O* adparticle to be seeded on site(s) 997 
+  O* adparticle to be seeded on site(s) 1001 
+  O* adparticle to be seeded on site(s) 1005 
+  O* adparticle to be seeded on site(s) 1009 
+  O* adparticle to be seeded on site(s) 1013 
+  O* adparticle to be seeded on site(s) 1017 
+  O* adparticle to be seeded on site(s) 1021 
+  O* adparticle to be seeded on site(s) 1025 
+  O* adparticle to be seeded on site(s) 1029 
+  O* adparticle to be seeded on site(s) 1033 
+  O* adparticle to be seeded on site(s) 1037 
+  O* adparticle to be seeded on site(s) 1041 
+  O* adparticle to be seeded on site(s) 1045 
+  O* adparticle to be seeded on site(s) 1049 
+  O* adparticle to be seeded on site(s) 1053 
+  O* adparticle to be seeded on site(s) 1153 
+  O* adparticle to be seeded on site(s) 1157 
+  O* adparticle to be seeded on site(s) 1161 
+  O* adparticle to be seeded on site(s) 1165 
+  O* adparticle to be seeded on site(s) 1169 
+  O* adparticle to be seeded on site(s) 1173 
+  O* adparticle to be seeded on site(s) 1177 
+  O* adparticle to be seeded on site(s) 1181 
+  O* adparticle to be seeded on site(s) 1185 
+  O* adparticle to be seeded on site(s) 1189 
+  O* adparticle to be seeded on site(s) 1193 
+  O* adparticle to be seeded on site(s) 1197 
+  O* adparticle to be seeded on site(s) 1201 
+  O* adparticle to be seeded on site(s) 1205 
+  O* adparticle to be seeded on site(s) 1209 
+  O* adparticle to be seeded on site(s) 1213 
+  O* adparticle to be seeded on site(s) 1217 
+  O* adparticle to be seeded on site(s) 1221 
+  O* adparticle to be seeded on site(s) 1225 
+  O* adparticle to be seeded on site(s) 1229 
+  O* adparticle to be seeded on site(s) 1233 
+  O* adparticle to be seeded on site(s) 1237 
+  O* adparticle to be seeded on site(s) 1241 
+  O* adparticle to be seeded on site(s) 1245 
+  O* adparticle to be seeded on site(s) 1345 
+  O* adparticle to be seeded on site(s) 1349 
+  O* adparticle to be seeded on site(s) 1353 
+  O* adparticle to be seeded on site(s) 1357 
+  O* adparticle to be seeded on site(s) 1361 
+  O* adparticle to be seeded on site(s) 1365 
+  O* adparticle to be seeded on site(s) 1369 
+  O* adparticle to be seeded on site(s) 1373 
+  O* adparticle to be seeded on site(s) 1377 
+  O* adparticle to be seeded on site(s) 1381 
+  O* adparticle to be seeded on site(s) 1385 
+  O* adparticle to be seeded on site(s) 1389 
+  O* adparticle to be seeded on site(s) 1393 
+  O* adparticle to be seeded on site(s) 1397 
+  O* adparticle to be seeded on site(s) 1401 
+  O* adparticle to be seeded on site(s) 1405 
+  O* adparticle to be seeded on site(s) 1409 
+  O* adparticle to be seeded on site(s) 1413 
+  O* adparticle to be seeded on site(s) 1417 
+  O* adparticle to be seeded on site(s) 1421 
+  O* adparticle to be seeded on site(s) 1425 
+  O* adparticle to be seeded on site(s) 1429 
+  O* adparticle to be seeded on site(s) 1433 
+  O* adparticle to be seeded on site(s) 1437 
+  O* adparticle to be seeded on site(s) 1537 
+  O* adparticle to be seeded on site(s) 1541 
+  O* adparticle to be seeded on site(s) 1545 
+  O* adparticle to be seeded on site(s) 1549 
+  O* adparticle to be seeded on site(s) 1553 
+  O* adparticle to be seeded on site(s) 1557 
+  O* adparticle to be seeded on site(s) 1561 
+  O* adparticle to be seeded on site(s) 1565 
+  O* adparticle to be seeded on site(s) 1569 
+  O* adparticle to be seeded on site(s) 1573 
+  O* adparticle to be seeded on site(s) 1577 
+  O* adparticle to be seeded on site(s) 1581 
+  O* adparticle to be seeded on site(s) 1585 
+  O* adparticle to be seeded on site(s) 1589 
+  O* adparticle to be seeded on site(s) 1593 
+  O* adparticle to be seeded on site(s) 1597 
+  O* adparticle to be seeded on site(s) 1601 
+  O* adparticle to be seeded on site(s) 1605 
+  O* adparticle to be seeded on site(s) 1609 
+  O* adparticle to be seeded on site(s) 1613 
+  O* adparticle to be seeded on site(s) 1617 
+  O* adparticle to be seeded on site(s) 1621 
+  O* adparticle to be seeded on site(s) 1625 
+  O* adparticle to be seeded on site(s) 1629 
+  O* adparticle to be seeded on site(s) 1729 
+  O* adparticle to be seeded on site(s) 1733 
+  O* adparticle to be seeded on site(s) 1737 
+  O* adparticle to be seeded on site(s) 1741 
+  O* adparticle to be seeded on site(s) 1745 
+  O* adparticle to be seeded on site(s) 1749 
+  O* adparticle to be seeded on site(s) 1753 
+  O* adparticle to be seeded on site(s) 1757 
+  O* adparticle to be seeded on site(s) 1761 
+  O* adparticle to be seeded on site(s) 1765 
+  O* adparticle to be seeded on site(s) 1769 
+  O* adparticle to be seeded on site(s) 1773 
+  O* adparticle to be seeded on site(s) 1777 
+  O* adparticle to be seeded on site(s) 1781 
+  O* adparticle to be seeded on site(s) 1785 
+  O* adparticle to be seeded on site(s) 1789 
+  O* adparticle to be seeded on site(s) 1793 
+  O* adparticle to be seeded on site(s) 1797 
+  O* adparticle to be seeded on site(s) 1801 
+  O* adparticle to be seeded on site(s) 1805 
+  O* adparticle to be seeded on site(s) 1809 
+  O* adparticle to be seeded on site(s) 1813 
+  O* adparticle to be seeded on site(s) 1817 
+  O* adparticle to be seeded on site(s) 1821 
+  O* adparticle to be seeded on site(s) 1921 
+  O* adparticle to be seeded on site(s) 1925 
+  O* adparticle to be seeded on site(s) 1929 
+  O* adparticle to be seeded on site(s) 1933 
+  O* adparticle to be seeded on site(s) 1937 
+  O* adparticle to be seeded on site(s) 1941 
+  O* adparticle to be seeded on site(s) 1945 
+  O* adparticle to be seeded on site(s) 1949 
+  O* adparticle to be seeded on site(s) 1953 
+  O* adparticle to be seeded on site(s) 1957 
+  O* adparticle to be seeded on site(s) 1961 
+  O* adparticle to be seeded on site(s) 1965 
+  O* adparticle to be seeded on site(s) 1969 
+  O* adparticle to be seeded on site(s) 1973 
+  O* adparticle to be seeded on site(s) 1977 
+  O* adparticle to be seeded on site(s) 1981 
+  O* adparticle to be seeded on site(s) 1985 
+  O* adparticle to be seeded on site(s) 1989 
+  O* adparticle to be seeded on site(s) 1993 
+  O* adparticle to be seeded on site(s) 1997 
+  O* adparticle to be seeded on site(s) 2001 
+  O* adparticle to be seeded on site(s) 2005 
+  O* adparticle to be seeded on site(s) 2009 
+  O* adparticle to be seeded on site(s) 2013 
+  O* adparticle to be seeded on site(s) 2113 
+  O* adparticle to be seeded on site(s) 2117 
+  O* adparticle to be seeded on site(s) 2121 
+  O* adparticle to be seeded on site(s) 2125 
+  O* adparticle to be seeded on site(s) 2129 
+  O* adparticle to be seeded on site(s) 2133 
+  O* adparticle to be seeded on site(s) 2137 
+  O* adparticle to be seeded on site(s) 2141 
+  O* adparticle to be seeded on site(s) 2145 
+  O* adparticle to be seeded on site(s) 2149 
+  O* adparticle to be seeded on site(s) 2153 
+  O* adparticle to be seeded on site(s) 2157 
+  O* adparticle to be seeded on site(s) 2161 
+  O* adparticle to be seeded on site(s) 2165 
+  O* adparticle to be seeded on site(s) 2169 
+  O* adparticle to be seeded on site(s) 2173 
+  O* adparticle to be seeded on site(s) 2177 
+  O* adparticle to be seeded on site(s) 2181 
+  O* adparticle to be seeded on site(s) 2185 
+  O* adparticle to be seeded on site(s) 2189 
+  O* adparticle to be seeded on site(s) 2193 
+  O* adparticle to be seeded on site(s) 2197 
+  O* adparticle to be seeded on site(s) 2201 
+  O* adparticle to be seeded on site(s) 2205 
+  O* adparticle to be seeded on site(s) 2305 
+  O* adparticle to be seeded on site(s) 2309 
+  O* adparticle to be seeded on site(s) 2313 
+  O* adparticle to be seeded on site(s) 2317 
+  O* adparticle to be seeded on site(s) 2321 
+  O* adparticle to be seeded on site(s) 2325 
+  O* adparticle to be seeded on site(s) 2329 
+  O* adparticle to be seeded on site(s) 2333 
+  O* adparticle to be seeded on site(s) 2337 
+  O* adparticle to be seeded on site(s) 2341 
+  O* adparticle to be seeded on site(s) 2345 
+  O* adparticle to be seeded on site(s) 2349 
+  O* adparticle to be seeded on site(s) 2353 
+  O* adparticle to be seeded on site(s) 2357 
+  O* adparticle to be seeded on site(s) 2361 
+  O* adparticle to be seeded on site(s) 2365 
+  O* adparticle to be seeded on site(s) 2369 
+  O* adparticle to be seeded on site(s) 2373 
+  O* adparticle to be seeded on site(s) 2377 
+  O* adparticle to be seeded on site(s) 2381 
+  O* adparticle to be seeded on site(s) 2385 
+  O* adparticle to be seeded on site(s) 2389 
+  O* adparticle to be seeded on site(s) 2393 
+  O* adparticle to be seeded on site(s) 2397 
+  O* adparticle to be seeded on site(s) 2497 
+  O* adparticle to be seeded on site(s) 2501 
+  O* adparticle to be seeded on site(s) 2505 
+  O* adparticle to be seeded on site(s) 2509 
+  O* adparticle to be seeded on site(s) 2513 
+  O* adparticle to be seeded on site(s) 2517 
+  O* adparticle to be seeded on site(s) 2521 
+  O* adparticle to be seeded on site(s) 2525 
+  O* adparticle to be seeded on site(s) 2529 
+  O* adparticle to be seeded on site(s) 2533 
+  O* adparticle to be seeded on site(s) 2537 
+  O* adparticle to be seeded on site(s) 2541 
+  O* adparticle to be seeded on site(s) 2545 
+  O* adparticle to be seeded on site(s) 2549 
+  O* adparticle to be seeded on site(s) 2553 
+  O* adparticle to be seeded on site(s) 2557 
+  O* adparticle to be seeded on site(s) 2561 
+  O* adparticle to be seeded on site(s) 2565 
+  O* adparticle to be seeded on site(s) 2569 
+  O* adparticle to be seeded on site(s) 2573 
+  O* adparticle to be seeded on site(s) 2577 
+  O* adparticle to be seeded on site(s) 2581 
+  O* adparticle to be seeded on site(s) 2585 
+  O* adparticle to be seeded on site(s) 2589 
+  O* adparticle to be seeded on site(s) 2689 
+  O* adparticle to be seeded on site(s) 2693 
+  O* adparticle to be seeded on site(s) 2697 
+  O* adparticle to be seeded on site(s) 2701 
+  O* adparticle to be seeded on site(s) 2705 
+  O* adparticle to be seeded on site(s) 2709 
+  O* adparticle to be seeded on site(s) 2713 
+  O* adparticle to be seeded on site(s) 2717 
+  O* adparticle to be seeded on site(s) 2721 
+  O* adparticle to be seeded on site(s) 2725 
+  O* adparticle to be seeded on site(s) 2729 
+  O* adparticle to be seeded on site(s) 2733 
+  O* adparticle to be seeded on site(s) 2737 
+  O* adparticle to be seeded on site(s) 2741 
+  O* adparticle to be seeded on site(s) 2745 
+  O* adparticle to be seeded on site(s) 2749 
+  O* adparticle to be seeded on site(s) 2753 
+  O* adparticle to be seeded on site(s) 2757 
+  O* adparticle to be seeded on site(s) 2761 
+  O* adparticle to be seeded on site(s) 2765 
+  O* adparticle to be seeded on site(s) 2769 
+  O* adparticle to be seeded on site(s) 2773 
+  O* adparticle to be seeded on site(s) 2777 
+  O* adparticle to be seeded on site(s) 2781 
+  O* adparticle to be seeded on site(s) 2881 
+  O* adparticle to be seeded on site(s) 2885 
+  O* adparticle to be seeded on site(s) 2889 
+  O* adparticle to be seeded on site(s) 2893 
+  O* adparticle to be seeded on site(s) 2897 
+  O* adparticle to be seeded on site(s) 2901 
+  O* adparticle to be seeded on site(s) 2905 
+  O* adparticle to be seeded on site(s) 2909 
+  O* adparticle to be seeded on site(s) 2913 
+  O* adparticle to be seeded on site(s) 2917 
+  O* adparticle to be seeded on site(s) 2921 
+  O* adparticle to be seeded on site(s) 2925 
+  O* adparticle to be seeded on site(s) 2929 
+  O* adparticle to be seeded on site(s) 2933 
+  O* adparticle to be seeded on site(s) 2937 
+  O* adparticle to be seeded on site(s) 2941 
+  O* adparticle to be seeded on site(s) 2945 
+  O* adparticle to be seeded on site(s) 2949 
+  O* adparticle to be seeded on site(s) 2953 
+  O* adparticle to be seeded on site(s) 2957 
+  O* adparticle to be seeded on site(s) 2961 
+  O* adparticle to be seeded on site(s) 2965 
+  O* adparticle to be seeded on site(s) 2969 
+  O* adparticle to be seeded on site(s) 2973 
+  O* adparticle to be seeded on site(s) 3073 
+  O* adparticle to be seeded on site(s) 3077 
+  O* adparticle to be seeded on site(s) 3081 
+  O* adparticle to be seeded on site(s) 3085 
+  O* adparticle to be seeded on site(s) 3089 
+  O* adparticle to be seeded on site(s) 3093 
+  O* adparticle to be seeded on site(s) 3097 
+  O* adparticle to be seeded on site(s) 3101 
+  O* adparticle to be seeded on site(s) 3105 
+  O* adparticle to be seeded on site(s) 3109 
+  O* adparticle to be seeded on site(s) 3113 
+  O* adparticle to be seeded on site(s) 3117 
+  O* adparticle to be seeded on site(s) 3121 
+  O* adparticle to be seeded on site(s) 3125 
+  O* adparticle to be seeded on site(s) 3129 
+  O* adparticle to be seeded on site(s) 3133 
+  O* adparticle to be seeded on site(s) 3137 
+  O* adparticle to be seeded on site(s) 3141 
+  O* adparticle to be seeded on site(s) 3145 
+  O* adparticle to be seeded on site(s) 3149 
+  O* adparticle to be seeded on site(s) 3153 
+  O* adparticle to be seeded on site(s) 3157 
+  O* adparticle to be seeded on site(s) 3161 
+  O* adparticle to be seeded on site(s) 3165 
+  O* adparticle to be seeded on site(s) 3265 
+  O* adparticle to be seeded on site(s) 3269 
+  O* adparticle to be seeded on site(s) 3273 
+  O* adparticle to be seeded on site(s) 3277 
+  O* adparticle to be seeded on site(s) 3281 
+  O* adparticle to be seeded on site(s) 3285 
+  O* adparticle to be seeded on site(s) 3289 
+  O* adparticle to be seeded on site(s) 3293 
+  O* adparticle to be seeded on site(s) 3297 
+  O* adparticle to be seeded on site(s) 3301 
+  O* adparticle to be seeded on site(s) 3305 
+  O* adparticle to be seeded on site(s) 3309 
+  O* adparticle to be seeded on site(s) 3313 
+  O* adparticle to be seeded on site(s) 3317 
+  O* adparticle to be seeded on site(s) 3321 
+  O* adparticle to be seeded on site(s) 3325 
+  O* adparticle to be seeded on site(s) 3329 
+  O* adparticle to be seeded on site(s) 3333 
+  O* adparticle to be seeded on site(s) 3337 
+  O* adparticle to be seeded on site(s) 3341 
+  O* adparticle to be seeded on site(s) 3345 
+  O* adparticle to be seeded on site(s) 3349 
+  O* adparticle to be seeded on site(s) 3353 
+  O* adparticle to be seeded on site(s) 3357 
+  O* adparticle to be seeded on site(s) 3457 
+  O* adparticle to be seeded on site(s) 3461 
+  O* adparticle to be seeded on site(s) 3465 
+  O* adparticle to be seeded on site(s) 3469 
+  O* adparticle to be seeded on site(s) 3473 
+  O* adparticle to be seeded on site(s) 3477 
+  O* adparticle to be seeded on site(s) 3481 
+  O* adparticle to be seeded on site(s) 3485 
+  O* adparticle to be seeded on site(s) 3489 
+  O* adparticle to be seeded on site(s) 3493 
+  O* adparticle to be seeded on site(s) 3497 
+  O* adparticle to be seeded on site(s) 3501 
+  O* adparticle to be seeded on site(s) 3505 
+  O* adparticle to be seeded on site(s) 3509 
+  O* adparticle to be seeded on site(s) 3513 
+  O* adparticle to be seeded on site(s) 3517 
+  O* adparticle to be seeded on site(s) 3521 
+  O* adparticle to be seeded on site(s) 3525 
+  O* adparticle to be seeded on site(s) 3529 
+  O* adparticle to be seeded on site(s) 3533 
+  O* adparticle to be seeded on site(s) 3537 
+  O* adparticle to be seeded on site(s) 3541 
+  O* adparticle to be seeded on site(s) 3545 
+  O* adparticle to be seeded on site(s) 3549 
+  O* adparticle to be seeded on site(s) 3649 
+  O* adparticle to be seeded on site(s) 3653 
+  O* adparticle to be seeded on site(s) 3657 
+  O* adparticle to be seeded on site(s) 3661 
+  O* adparticle to be seeded on site(s) 3665 
+  O* adparticle to be seeded on site(s) 3669 
+  O* adparticle to be seeded on site(s) 3673 
+  O* adparticle to be seeded on site(s) 3677 
+  O* adparticle to be seeded on site(s) 3681 
+  O* adparticle to be seeded on site(s) 3685 
+  O* adparticle to be seeded on site(s) 3689 
+  O* adparticle to be seeded on site(s) 3693 
+  O* adparticle to be seeded on site(s) 3697 
+  O* adparticle to be seeded on site(s) 3701 
+  O* adparticle to be seeded on site(s) 3705 
+  O* adparticle to be seeded on site(s) 3709 
+  O* adparticle to be seeded on site(s) 3713 
+  O* adparticle to be seeded on site(s) 3717 
+  O* adparticle to be seeded on site(s) 3721 
+  O* adparticle to be seeded on site(s) 3725 
+  O* adparticle to be seeded on site(s) 3729 
+  O* adparticle to be seeded on site(s) 3733 
+  O* adparticle to be seeded on site(s) 3737 
+  O* adparticle to be seeded on site(s) 3741 
+  O* adparticle to be seeded on site(s) 3841 
+  O* adparticle to be seeded on site(s) 3845 
+  O* adparticle to be seeded on site(s) 3849 
+  O* adparticle to be seeded on site(s) 3853 
+  O* adparticle to be seeded on site(s) 3857 
+  O* adparticle to be seeded on site(s) 3861 
+  O* adparticle to be seeded on site(s) 3865 
+  O* adparticle to be seeded on site(s) 3869 
+  O* adparticle to be seeded on site(s) 3873 
+  O* adparticle to be seeded on site(s) 3877 
+  O* adparticle to be seeded on site(s) 3881 
+  O* adparticle to be seeded on site(s) 3885 
+  O* adparticle to be seeded on site(s) 3889 
+  O* adparticle to be seeded on site(s) 3893 
+  O* adparticle to be seeded on site(s) 3897 
+  O* adparticle to be seeded on site(s) 3901 
+  O* adparticle to be seeded on site(s) 3905 
+  O* adparticle to be seeded on site(s) 3909 
+  O* adparticle to be seeded on site(s) 3913 
+  O* adparticle to be seeded on site(s) 3917 
+  O* adparticle to be seeded on site(s) 3921 
+  O* adparticle to be seeded on site(s) 3925 
+  O* adparticle to be seeded on site(s) 3929 
+  O* adparticle to be seeded on site(s) 3933 
+  O* adparticle to be seeded on site(s) 4033 
+  O* adparticle to be seeded on site(s) 4037 
+  O* adparticle to be seeded on site(s) 4041 
+  O* adparticle to be seeded on site(s) 4045 
+  O* adparticle to be seeded on site(s) 4049 
+  O* adparticle to be seeded on site(s) 4053 
+  O* adparticle to be seeded on site(s) 4057 
+  O* adparticle to be seeded on site(s) 4061 
+  O* adparticle to be seeded on site(s) 4065 
+  O* adparticle to be seeded on site(s) 4069 
+  O* adparticle to be seeded on site(s) 4073 
+  O* adparticle to be seeded on site(s) 4077 
+  O* adparticle to be seeded on site(s) 4081 
+  O* adparticle to be seeded on site(s) 4085 
+  O* adparticle to be seeded on site(s) 4089 
+  O* adparticle to be seeded on site(s) 4093 
+  O* adparticle to be seeded on site(s) 4097 
+  O* adparticle to be seeded on site(s) 4101 
+  O* adparticle to be seeded on site(s) 4105 
+  O* adparticle to be seeded on site(s) 4109 
+  O* adparticle to be seeded on site(s) 4113 
+  O* adparticle to be seeded on site(s) 4117 
+  O* adparticle to be seeded on site(s) 4121 
+  O* adparticle to be seeded on site(s) 4125 
+  O* adparticle to be seeded on site(s) 4225 
+  O* adparticle to be seeded on site(s) 4229 
+  O* adparticle to be seeded on site(s) 4233 
+  O* adparticle to be seeded on site(s) 4237 
+  O* adparticle to be seeded on site(s) 4241 
+  O* adparticle to be seeded on site(s) 4245 
+  O* adparticle to be seeded on site(s) 4249 
+  O* adparticle to be seeded on site(s) 4253 
+  O* adparticle to be seeded on site(s) 4257 
+  O* adparticle to be seeded on site(s) 4261 
+  O* adparticle to be seeded on site(s) 4265 
+  O* adparticle to be seeded on site(s) 4269 
+  O* adparticle to be seeded on site(s) 4273 
+  O* adparticle to be seeded on site(s) 4277 
+  O* adparticle to be seeded on site(s) 4281 
+  O* adparticle to be seeded on site(s) 4285 
+  O* adparticle to be seeded on site(s) 4289 
+  O* adparticle to be seeded on site(s) 4293 
+  O* adparticle to be seeded on site(s) 4297 
+  O* adparticle to be seeded on site(s) 4301 
+  O* adparticle to be seeded on site(s) 4305 
+  O* adparticle to be seeded on site(s) 4309 
+  O* adparticle to be seeded on site(s) 4313 
+  O* adparticle to be seeded on site(s) 4317 
+  O* adparticle to be seeded on site(s) 4417 
+  O* adparticle to be seeded on site(s) 4421 
+  O* adparticle to be seeded on site(s) 4425 
+  O* adparticle to be seeded on site(s) 4429 
+  O* adparticle to be seeded on site(s) 4433 
+  O* adparticle to be seeded on site(s) 4437 
+  O* adparticle to be seeded on site(s) 4441 
+  O* adparticle to be seeded on site(s) 4445 
+  O* adparticle to be seeded on site(s) 4449 
+  O* adparticle to be seeded on site(s) 4453 
+  O* adparticle to be seeded on site(s) 4457 
+  O* adparticle to be seeded on site(s) 4461 
+  O* adparticle to be seeded on site(s) 4465 
+  O* adparticle to be seeded on site(s) 4469 
+  O* adparticle to be seeded on site(s) 4473 
+  O* adparticle to be seeded on site(s) 4477 
+  O* adparticle to be seeded on site(s) 4481 
+  O* adparticle to be seeded on site(s) 4485 
+  O* adparticle to be seeded on site(s) 4489 
+  O* adparticle to be seeded on site(s) 4493 
+  O* adparticle to be seeded on site(s) 4497 
+  O* adparticle to be seeded on site(s) 4501 
+  O* adparticle to be seeded on site(s) 4505 
+  O* adparticle to be seeded on site(s) 4509   
+
+Finished reading initial state input.
+
+Threading information:
+~~~~~~~~~~~~~~~~~~~~~~
+     WITH THREADS            1
+
+Commencing simulation:
+~~~~~~~~~~~~~~~~~~~~~~
+
+Simulation stopped:
+~~~~~~~~~~~~~~~~~~~
+ Current KMC time: 500.0005
+ Events occurred:  1504531
+ Event frequency:  3009.059
+
+Performance facts:
+~~~~~~~~~~~~~~~~~~
+
+Elapsed CPU time:         72019.40 seconds
+Elapsed clock time:       72022.00 seconds
+
+Clock time per KMC event: 4.7870066E-02 seconds
+Clock time per KMC time:  144.0439 seconds/KMCTimeUnits
+
+Events per clock hour:    75203
+KMC Dt per clock hour:    24.99239 KMCTimeUnits
+
+> Normal termination <
